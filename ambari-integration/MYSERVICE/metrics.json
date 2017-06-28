@@ -1,0 +1,25 @@
+{
+  "UBERCOUNT_CLIENT": {
+    "Component": [
+      {
+        "type": "ganglia",
+        "metrics": {
+          "default": {
+            "metrics/ubercount/apr_counts":{
+              "metric":"ubercount.apr_counts",
+              "pointInTime":true,
+              "temporal":true,
+              "amsHostMetric":true
+            },
+            "metrics/ubercount/aug_counts":{
+              "metric":"ubercount.aug_counts",
+              "pointInTime":true,
+              "temporal":true,
+              "amsHostMetric":true
+            }
+          }
+        }
+      }
+    ]
+  }
+}

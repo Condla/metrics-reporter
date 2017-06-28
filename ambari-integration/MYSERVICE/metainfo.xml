@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>UBERCOUNT</name>
+            <displayName>Hive Count Monitor Demo</displayName>
+            <comment>A monitorng demo serving as template. </comment>
+            <version>0.1.0</version>
+            <components>
+                <component>
+                    <name>UBERCOUNT_CLIENT</name>
+                    <displayName>Uber Count client</displayName>
+                    <category>CLIENT</category>
+                    <cardinality>1+</cardinality>
+                    <commandScript>
+                        <script>scripts/uber_client.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                </component>
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                </osSpecific>
+            </osSpecifics>
+        </service>
+    </services>
+</metainfo>

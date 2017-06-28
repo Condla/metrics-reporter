@@ -1,0 +1,39 @@
+{
+	"layouts": [{
+		"layout_name": "default_ubercount_dashboard",
+		"display_name": "Standard Uber Count Dashboard",
+		"section_name": "UBER_SUMMARY",
+		"widgetLayoutInfo": [{
+			"widget_name": "Hive Table Count",
+			"description": "Count of all entries in a table.",
+			"widget_type": "GRAPH",
+			"is_visible": true,
+			"metrics": [{
+					"name": "ubercount.apr_counts",
+					"metric_path": "metrics/ubercount/apr_counts",
+					"service_name": "UBERCOUNT",
+					"component_name": "UBERCOUNT_CLIENT"
+				},
+				{
+					"name": "ubercount.aug_counts",
+					"metric_path": "metrics/ubercount/aug_counts",
+					"service_name": "UBERCOUNT",
+					"component_name": "UBERCOUNT_CLIENT"
+				}
+			],
+			"values": [{
+					"name": "Counts of April Table",
+					"value": "${ubercount.apr_counts}"
+				},
+				{
+					"name": "Counts of August table",
+					"value": "${ubercount.aug_counts}"
+				}
+			],
+			"properties": {
+				"graph_type": "LINE",
+				"time_range": "1"
+			}
+		}]
+	}]
+}
