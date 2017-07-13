@@ -4,8 +4,8 @@ public class SimpleMetricsReporter extends MetricsReporter {
 
 	Double value;
 
-	public SimpleMetricsReporter(String urlBase, String metricName, String appId, String hostname, Double value) {
-		super(urlBase, metricName, appId, hostname);
+	public SimpleMetricsReporter(String zookeeperQuorum, String ambariMetricsCollectorPort, String appId, String metricName, String hostname, Double value) {
+        super(zookeeperQuorum, ambariMetricsCollectorPort, appId, metricName, hostname);
 		this.value = value;
 	}
 

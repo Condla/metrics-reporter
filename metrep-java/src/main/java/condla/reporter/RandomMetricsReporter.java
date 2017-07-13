@@ -8,8 +8,8 @@ import java.util.Random;
 public class RandomMetricsReporter extends MetricsReporter {
 
 
-    public RandomMetricsReporter(String urlBase, String metricName, String appId, String hostname) {
-        super(urlBase, metricName, appId, hostname);
+    public RandomMetricsReporter(String zookeeperQuorum, String ambariMetricsCollectorPort, String appId, String metricName, String hostname) {
+        super(zookeeperQuorum, ambariMetricsCollectorPort, appId, metricName, hostname);
     }
 
     @Override 
