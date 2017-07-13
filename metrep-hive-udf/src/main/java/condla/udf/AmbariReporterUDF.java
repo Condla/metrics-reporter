@@ -14,24 +14,17 @@ public final class AmbariReporterUDF extends UDF {
 	int response;
 	MetricsReporter mr;
 
-	public int evaluate(String ambariMetricsCollector, String metricName, String appId, String hostname, String value)
-			throws IOException {
-		mr = new SimpleMetricsReporter(ambariMetricsCollector, metricName, appId, hostname, Double.parseDouble(value));
+	public int evaluate(String zookeeperQuorum, String ambariMetricsCollectorPort, String appId, String metricName,
+			String hostname, String value) throws IOException {
+		mr = new SimpleMetricsReporter(zookeeperQuorum, ambariMetricsCollectorPort, appId, metricName, hostname,
+				Double.parseDouble(value));
 		response = mr.post();
 		return response;
 	}
 
-	public int evaluate(String ambariMetricsCollector, String metricName, String appId, String value)
-			throws IOException {
-		return evaluate(ambariMetricsCollector, metricName, appId, "", value);
-	}
-
-	public int evaluate() throws IOException {
-		mr = new SimpleMetricsReporter("http://condla2.field.hortonworks.com:6188", "thishivemetric", "thishiveapp",
-				"thishivehostname", 10.0);
-
-		response = mr.post();
-		return response;
+	public int evaluate(String zookeeperQuorum, String ambariMetricsCollectorPort, String appId, String metricName,
+			String value) throws IOException {
+		return evaluate(zookeeperQuorum, ambariMetricsCollectorPort, appId, metricName, "", value);
 	}
 
 }
